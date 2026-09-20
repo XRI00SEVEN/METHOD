@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover">
+<meta name="theme-color" content="#060a09">
+<title>IMMU XD - BUG — Plans</title>
+<meta name="description" content="IMMU XD - BUG plans. Pick a plan and message us on WhatsApp to activate.">
+<link rel="icon" type="image/jpeg" href="https://i.ibb.co/sJv2Rd9q/IMG-20260914-WA0098.jpg">
+<meta property="og:type" content="website">
+<meta property="og:title" content="IMMU XD - BUG — Plans">
+<meta property="og:description" content="Pick a plan and message us on WhatsApp to activate IMMU XD - BUG.">
+<meta property="og:image" content="https://i.ibb.co/sJv2Rd9q/IMG-20260914-WA0098.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="IMMU XD - BUG — Plans">
+<meta name="twitter:description" content="Pick a plan and message us on WhatsApp to activate IMMU XD - BUG.">
+<meta name="twitter:image" content="https://i.ibb.co/sJv2Rd9q/IMG-20260914-WA0098.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;600;800&family=Space+Grotesk:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#060a09;
+  --panel:rgba(14,20,18,.72);
+  --ink:#dde8e2;
+  --ink-soft:#b8c8c1;
+  --dim:#6f827a;
+  --line:rgba(126,158,146,.11);
+  --line-2:rgba(126,158,146,.2);
+  --glow:#5fd99b;
+  --glow-dim:#3fae7a;
+  --glow-soft:rgba(95,217,155,.11);
+  --amber:#e8b563;
+  --amber-soft:rgba(232,181,99,.09);
+  --red:#e08383;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);color:var(--ink);
+  font-family:'Space Grotesk',sans-serif;line-height:1.5;
+  overflow-x:hidden;-webkit-font-smoothing:antialiased;
+  min-height:100dvh;
+}
+::selection{background:var(--glow);color:#05130d}
+a{text-decoration:none}
+:focus-visible{outline:1px solid var(--glow);outline-offset:3px}
+
+#scene{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.85}
+.grain{
+  position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.035;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.wash{
+  position:fixed;inset:0;z-index:1;pointer-events:none;
+  transition:background 1.2s ease;
+  background:
+    radial-gradient(70% 50% at 50% -5%,rgba(95,217,155,.07),transparent 70%),
+    radial-gradient(60% 45% at 90% 100%,rgba(232,181,99,.04),transparent 70%),
+    radial-gradient(ellipse 120% 100% at 50% 45%,transparent 40%,rgba(3,6,5,.72));
+}
+body.is-live .wash{
+  background:
+    radial-gradient(70% 50% at 50% -5%,rgba(95,217,155,.13),transparent 70%),
+    radial-gradient(60% 45% at 90% 100%,rgba(232,181,99,.08),transparent 70%),
+    radial-gradient(ellipse 120% 100% at 50% 45%,transparent 40%,rgba(3,6,5,.72));
+}
+
+/* ---------- nav ---------- */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:60;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:18px clamp(20px,5vw,60px);
+  backdrop-filter:blur(14px);
+  background:linear-gradient(to bottom,rgba(6,10,9,.9),rgba(6,10,9,.4) 60%,transparent);
+}
+.logo{
+  font-family:'Unbounded';font-weight:600;font-size:14px;letter-spacing:.1em;
+  display:flex;align-items:center;gap:10px;color:var(--ink);
+}
+.logo .dot{
+  width:7px;height:7px;border-radius:50%;background:var(--glow);
+  box-shadow:0 0 12px var(--glow);animation:pulseDot 2.6s ease-in-out infinite;
+}
+@keyframes pulseDot{0%,100%{opacity:.6;transform:scale(.9)}50%{opacity:1;transform:scale(1.1)}}
+.nav-cta{
+  font-family:'JetBrains Mono';font-size:11.5px;letter-spacing:.06em;
+  color:var(--ink);border:1px solid var(--line-2);
+  padding:9px 18px;border-radius:100px;transition:all .35s;
+}
+.nav-cta:hover{border-color:var(--glow);color:var(--glow);box-shadow:0 0 26px var(--glow-soft)}
+.nav-right{display:flex;align-items:center;gap:10px}
+.back-btn{
+  font-family:'JetBrains Mono';font-size:11.5px;letter-spacing:.06em;
+  color:var(--ink-soft);border:1px solid var(--line-2);
+  padding:9px 16px;border-radius:100px;transition:all .35s;
+  display:flex;align-items:center;gap:7px;
+}
+.back-btn:hover{border-color:var(--glow);color:var(--glow);box-shadow:0 0 26px var(--glow-soft)}
+.back-btn svg{flex-shrink:0}
+
+/* ---------- hero ---------- */
+.hero{
+  position:relative;z-index:2;
+  padding:132px clamp(20px,6vw,60px) 0;
+  text-align:center;display:flex;flex-direction:column;align-items:center;
+}
+.eyebrow{
+  font-family:'JetBrains Mono';font-size:10.5px;letter-spacing:.34em;
+  color:var(--glow-dim);text-transform:uppercase;
+  display:inline-flex;align-items:center;gap:11px;
+  border:1px solid var(--line-2);border-radius:100px;padding:8px 18px;
+  margin-bottom:30px;background:rgba(95,217,155,.03);
+  opacity:0;animation:fadeUp .9s .1s cubic-bezier(.2,.7,.2,1) forwards;
+}
+.eyebrow i{width:5px;height:5px;border-radius:50%;background:var(--glow);box-shadow:0 0 10px var(--glow)}
+h1{
+  font-family:'Unbounded';font-weight:300;
+  font-size:clamp(34px,7vw,74px);line-height:1.03;letter-spacing:-.025em;max-width:14ch;
+}
+h1 .w{display:inline-block;overflow:hidden;vertical-align:bottom}
+h1 .w>span{display:inline-block;transform:translateY(105%);animation:slideUp 1.05s cubic-bezier(.16,.84,.32,1) forwards}
+h1 .w:nth-of-type(1)>span{animation-delay:.22s}
+h1 .w:nth-of-type(2)>span{animation-delay:.32s}
+h1 .w:nth-of-type(3)>span{animation-delay:.42s}
+h1 .grad{
+  background:linear-gradient(100deg,var(--glow) 10%,var(--amber) 90%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;font-weight:600;
+}
+.hero p{
+  margin-top:22px;max-width:46ch;
+  font-size:clamp(14px,1.5vw,16px);font-weight:300;color:var(--dim);line-height:1.75;
+  opacity:0;animation:fadeUp .9s .68s cubic-bezier(.2,.7,.2,1) forwards;
+}
+.hero p b{color:var(--ink-soft);font-weight:400}
+@keyframes slideUp{to{transform:translateY(0)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+
+/* ---------- panel ---------- */
+.stage{
+  position:relative;z-index:2;
+  margin:46px auto 0;max-width:560px;
+  padding:0 clamp(20px,6vw,60px);
+  opacity:0;animation:fadeUp 1s .85s cubic-bezier(.2,.7,.2,1) forwards;
+}
+.panel{
+  position:relative;border-radius:24px;overflow:hidden;
+  background:
+    linear-gradient(var(--panel),var(--panel)) padding-box,
+    linear-gradient(150deg,rgba(95,217,155,.5),rgba(95,217,155,.06) 45%,rgba(232,181,99,.28)) border-box;
+  border:1px solid transparent;
+  backdrop-filter:blur(18px);
+  padding:32px clamp(22px,5vw,32px);
+  box-shadow:0 0 70px rgba(95,217,155,.05);
+  transition:box-shadow .8s ease;
+}
+.panel::before{
+  content:'';position:absolute;top:-1px;left:24%;right:24%;height:1px;
+  background:linear-gradient(90deg,transparent,var(--glow),transparent);
+}
+body.is-live .panel{box-shadow:0 0 110px rgba(95,217,155,.12),0 40px 90px rgba(0,0,0,.5)}
+
+.lbl{
+  font-family:'JetBrains Mono';font-size:10px;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--dim);display:block;margin-bottom:16px;text-align:center;
+}
+
+/* ---------- reveal button ---------- */
+.btn-row{display:flex;align-items:center;gap:14px}
+.btn-line{
+  flex:1 1 auto;height:1px;min-width:14px;
+  background:linear-gradient(90deg,transparent,var(--line-2) 40%,var(--line-2) 60%,transparent);
+  position:relative;
+}
+.btn-line::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(90deg,transparent,var(--glow) 45%,var(--glow) 55%,transparent);
+  opacity:.55;filter:blur(.5px);
+  animation:linePulse 2.6s ease-in-out infinite;
+}
+@keyframes linePulse{0%,100%{opacity:.25}50%{opacity:.75}}
+.reveal-btn{
+  flex:0 0 auto;border:0;cursor:pointer;
+  font-family:'JetBrains Mono';font-size:13px;letter-spacing:.03em;font-weight:400;
+  padding:17px 26px;border-radius:100px;white-space:nowrap;
+  background:linear-gradient(110deg,var(--glow),var(--glow-dim));
+  color:#04140d;
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s;
+}
+.reveal-btn:hover{transform:translateY(-3px);box-shadow:0 16px 46px rgba(95,217,155,.22)}
+.reveal-btn:active{transform:translateY(0)}
+.reveal-btn .chev{flex-shrink:0;transition:transform .4s cubic-bezier(.2,.7,.2,1)}
+.reveal-btn.open .chev{transform:rotate(180deg)}
+
+/* ---------- plans ---------- */
+.plans-wrap{
+  display:grid;grid-template-rows:0fr;transition:grid-template-rows .55s cubic-bezier(.2,.7,.2,1);
+}
+.plans-wrap.open{grid-template-rows:1fr}
+.plans-inner{overflow:hidden;min-height:0}
+.plans{display:grid;gap:12px;padding-top:18px}
+.plan{
+  position:relative;display:flex;align-items:center;justify-content:space-between;gap:14px;
+  border:1px solid var(--line-2);border-radius:16px;
+  background:rgba(6,10,9,.55);
+  padding:16px 18px;cursor:pointer;
+  transition:border-color .35s,box-shadow .35s,transform .35s;
+  opacity:0;transform:translateY(10px);
+  animation:stepIn .55s cubic-bezier(.2,.7,.2,1) forwards;
+}
+.plan:nth-child(1){animation-delay:.30s}
+.plan:nth-child(2){animation-delay:.37s}
+.plan:nth-child(3){animation-delay:.44s}
+.plan:nth-child(4){animation-delay:.51s}
+.plan:nth-child(5){animation-delay:.58s}
+@keyframes stepIn{to{opacity:1;transform:none}}
+.plan:hover{border-color:var(--glow);box-shadow:0 0 34px rgba(95,217,155,.12);transform:translateY(-2px)}
+.plan:active{transform:translateY(0)}
+.plan.best{border-color:rgba(232,181,99,.45)}
+.plan.best:hover{box-shadow:0 0 34px rgba(232,181,99,.16)}
+
+.plan-left{display:flex;flex-direction:column;gap:4px;min-width:0;flex:1 1 auto}
+.plan-name{
+  font-family:'JetBrains Mono';font-size:13px;letter-spacing:.06em;color:var(--ink);
+  display:flex;align-items:center;gap:8px;flex-wrap:wrap;row-gap:5px;
+}
+.plan-name .badge{
+  font-size:8.5px;letter-spacing:.1em;color:var(--amber);
+  border:1px solid rgba(232,181,99,.35);border-radius:100px;padding:2px 7px;
+  background:var(--amber-soft);white-space:nowrap;flex-shrink:0;
+}
+.plan-sub{font-size:11px;color:var(--dim);font-weight:300}
+
+.plan-right{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.plan-price{
+  font-family:'Unbounded';font-weight:600;font-size:15px;color:var(--glow);
+  white-space:nowrap;
+}
+.plan-arrow{
+  width:30px;height:30px;border-radius:50%;flex-shrink:0;
+  display:grid;place-items:center;
+  border:1px solid var(--line-2);color:var(--ink-soft);
+  transition:all .35s;
+}
+.plan:hover .plan-arrow{border-color:var(--glow);color:var(--glow);background:var(--glow-soft)}
+
+@media (max-width:360px){
+  .plan{padding:14px 12px;gap:8px}
+  .plan-right{gap:7px}
+  .plan-price{font-size:13.5px}
+  .plan-arrow{width:26px;height:26px}
+}
+
+/* ---------- analytics ---------- */
+.analytics{
+  margin-top:18px;border:1px solid var(--line-2);border-radius:18px;
+  background:linear-gradient(160deg,rgba(95,217,155,.05),rgba(6,10,9,.4) 60%);
+  padding:20px 20px 16px;overflow:hidden;position:relative;
+}
+.analytics::before{
+  content:'';position:absolute;top:-40%;right:-20%;width:60%;height:140%;
+  background:radial-gradient(circle,rgba(95,217,155,.10),transparent 65%);
+  pointer-events:none;
+}
+.an-head{
+  display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;position:relative;z-index:1;
+}
+.an-head .lbl{margin:0}
+.an-live{
+  display:flex;align-items:center;gap:6px;
+  font-family:'JetBrains Mono';font-size:9.5px;letter-spacing:.14em;color:var(--glow);
+  border:1px solid rgba(95,217,155,.3);border-radius:100px;padding:4px 10px;
+  background:var(--glow-soft);
+}
+.an-live i{width:5px;height:5px;border-radius:50%;background:var(--glow);box-shadow:0 0 8px var(--glow);animation:pulseDot 2s ease-in-out infinite}
+
+.astats{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:10px;position:relative;z-index:1;margin-bottom:18px;
+}
+.astat{
+  border:1px solid var(--line);border-radius:12px;padding:12px 10px;text-align:center;
+  background:rgba(6,10,9,.4);
+}
+.astat b{
+  display:block;font-family:'Unbounded';font-weight:600;font-size:clamp(15px,4vw,19px);color:var(--ink);
+  letter-spacing:-.01em;
+}
+.astat b.amb{color:var(--amber)}
+.astat b.grn{color:var(--glow)}
+.astat span{
+  display:block;margin-top:4px;font-family:'JetBrains Mono';font-size:9px;letter-spacing:.08em;
+  color:var(--dim);text-transform:uppercase;
+}
+
+.achart{position:relative;z-index:1}
+.achart svg{width:100%;height:auto;display:block}
+.achart-line{
+  fill:none;stroke:url(#lineGrad);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;
+  stroke-dasharray:520;stroke-dashoffset:520;
+  animation:draw 2.2s cubic-bezier(.2,.7,.2,1) .2s forwards;
+}
+.achart-fill{opacity:0;animation:fadeIn 1s ease .9s forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes fadeIn{to{opacity:1}}
+.achart-dot{
+  fill:var(--glow);opacity:0;animation:fadeIn .5s ease 2s forwards;
+}
+.achart-foot{
+  display:flex;justify-content:space-between;margin-top:6px;
+  font-family:'JetBrains Mono';font-size:9px;letter-spacing:.08em;color:var(--dim);
+}
+.an-note{
+  margin-top:16px;padding-top:14px;border-top:1px solid var(--line);
+  font-size:11.5px;font-weight:300;color:var(--dim);line-height:1.6;text-align:center;
+  position:relative;z-index:1;
+}
+
+.hint{
+  margin-top:22px;font-family:'JetBrains Mono';font-size:10px;letter-spacing:.1em;
+  color:var(--dim);text-align:center;opacity:.7;
+}
+
+/* ---------- disclaimer ---------- */
+.disclaimer{
+  margin-top:20px;border:1px solid rgba(232,181,99,.28);border-radius:14px;
+  background:linear-gradient(120deg,rgba(232,181,99,.06),transparent 60%);
+  padding:16px 18px;
+}
+.disclaimer-title{
+  font-family:'JetBrains Mono';font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--amber);display:flex;align-items:center;gap:8px;margin-bottom:8px;
+}
+.disclaimer p{
+  font-size:12px;font-weight:300;color:var(--dim);line-height:1.7;
+}
+.disclaimer p+p{margin-top:6px}
+.disclaimer b{color:var(--ink-soft);font-weight:500}
+
+/* ---------- footer ---------- */
+footer{
+  position:relative;z-index:2;margin-top:clamp(60px,10vw,110px);
+  border-top:1px solid var(--line);
+  padding:38px clamp(20px,6vw,60px) 32px;
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;
+  color:var(--dim);font-size:12.5px;
+}
+footer a{color:var(--dim);transition:color .3s}
+footer a:hover{color:var(--glow)}
+.foot-links{display:flex;gap:20px;font-family:'JetBrains Mono';font-size:11px;flex-wrap:wrap}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+  h1 .w>span{transform:none}
+  .eyebrow,.hero p,.stage,.plan{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<canvas id="scene"></canvas>
+<div class="wash"></div>
+<div class="grain"></div>
+
+<nav>
+  <a href="#" class="logo"><span class="dot"></span>IMMU XD - BUG</a>
+  <div class="nav-right">
+    <a class="back-btn" href="https://www.immumdbot.com">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+      Back
+    </a>
+    <a class="nav-cta" href="https://whatsapp.com/channel/0029Vaq4PRsD38CJKXzwmb42" target="_blank" rel="noopener">Support</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="eyebrow"><i></i>IMMU XD - BUG ACTIVE AND POWERFUL</div>
+  <h1>
+    <span class="w"><span>Choose</span></span>
+    <span class="w"><span>your</span></span>
+    <span class="w"><span class="grad">plan.</span></span>
+  </h1>
+  <p>Pick a plan below — it opens WhatsApp with the plan already filled in. Just hit send and we'll activate <b>IMMU XD - BUG</b> for you.</p>
+</header>
+
+<div class="stage">
+  <main class="panel">
+
+    <div class="btn-row">
+      <span class="btn-line"></span>
+      <button class="reveal-btn" id="revealBtn">
+        <span class="rb-text">See available plans</span>
+        <svg class="chev" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+      <span class="btn-line"></span>
+    </div>
+
+    <div class="plans-wrap" id="plansWrap">
+    <div class="plans-inner">
+    <div class="plans" id="plans">
+      <div class="plan" data-days="3 Days" data-price="200">
+        <div class="plan-left">
+          <span class="plan-name">3 DAYS</span>
+          <span class="plan-sub">Short-term access</span>
+        </div>
+        <div class="plan-right">
+          <span class="plan-price">Rs 200</span>
+          <span class="plan-arrow">→</span>
+        </div>
+      </div>
+
+      <div class="plan" data-days="7 Days" data-price="350">
+        <div class="plan-left">
+          <span class="plan-name">7 DAYS</span>
+          <span class="plan-sub">One week access</span>
+        </div>
+        <div class="plan-right">
+          <span class="plan-price">Rs 350</span>
+          <span class="plan-arrow">→</span>
+        </div>
+      </div>
+
+      <div class="plan" data-days="14 Days" data-price="750">
+        <div class="plan-left">
+          <span class="plan-name">14 DAYS</span>
+          <span class="plan-sub">Two weeks access</span>
+        </div>
+        <div class="plan-right">
+          <span class="plan-price">Rs 750</span>
+          <span class="plan-arrow">→</span>
+        </div>
+      </div>
+
+      <div class="plan best" data-days="1 Month" data-price="1700">
+        <div class="plan-left">
+          <span class="plan-name">1 MONTH <span class="badge">Popular</span></span>
+          <span class="plan-sub">Full month access</span>
+        </div>
+        <div class="plan-right">
+          <span class="plan-price">Rs 1700</span>
+          <span class="plan-arrow">→</span>
+        </div>
+      </div>
+
+      <div class="plan best" data-days="Permanent" data-price="3000">
+        <div class="plan-left">
+          <span class="plan-name">PERMANENT <span class="badge">Best value</span></span>
+          <span class="plan-sub">Lifetime access</span>
+        </div>
+        <div class="plan-right">
+          <span class="plan-price">Rs 3000</span>
+          <span class="plan-arrow">→</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hint">Tapping a plan opens WhatsApp with your order pre-filled</div>
+    </div>
+    </div>
+
+    <div class="analytics">
+      <div class="an-head">
+        <span class="lbl" style="margin:0">Bot analytics</span>
+        <span class="an-live"><i></i>LIVE</span>
+      </div>
+
+      <div class="astats">
+        <div class="astat"><b class="grn">99.9%</b><span>Uptime</span></div>
+        <div class="astat"><b class="amb">76</b><span>Active models</span></div>
+        <div class="astat"><b>100%</b><span>Work guarantee</span></div>
+      </div>
+
+      <div class="achart">
+        <svg viewBox="0 0 300 90" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#5fd99b"/>
+              <stop offset="100%" stop-color="#e8b563"/>
+            </linearGradient>
+            <linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#5fd99b" stop-opacity=".22"/>
+              <stop offset="100%" stop-color="#5fd99b" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <polygon class="achart-fill" fill="url(#areaGrad)" points="0,70 25,62 50,66 75,50 100,55 125,40 150,45 175,30 200,34 225,20 250,26 275,12 300,16 300,90 0,90"/>
+          <polyline class="achart-line" points="0,70 25,62 50,66 75,50 100,55 125,40 150,45 175,30 200,34 225,20 250,26 275,12 300,16"/>
+          <circle class="achart-dot" cx="300" cy="16" r="4"/>
+        </svg>
+        <div class="achart-foot">
+          <span>7 days ago</span>
+          <span>Today</span>
+        </div>
+      </div>
+
+      <div class="an-note">Performance monitored around the clock — consistent uptime, reliable output, guaranteed.</div>
+    </div>
+
+    <div class="disclaimer">
+      <div class="disclaimer-title">⚠ Educational Use Only</div>
+      <p>IMMU XD - BUG is shared strictly for <b>educational and research purposes</b> — to learn about WhatsApp bot automation, Node.js, and related development concepts.</p>
+      <p>The developer does <b>not support or encourage</b> any misuse, including spam, harassment, unauthorized access, or violation of WhatsApp's Terms of Service. Any misuse of this tool is solely the <b>user's own responsibility</b>. The developer is <b>not liable</b> for any damage, ban, or legal issue arising from its use.</p>
+    </div>
+
+  </main>
+</div>
+
+<footer>
+  <a href="#" class="logo" style="font-size:12.5px"><span class="dot"></span>IMMU XD - BUG</a>
+  <div class="foot-links">
+    <a href="https://github.com/sta-janan/IMMU-MD-V3.0" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://youtube.com/@immumdbot" target="_blank" rel="noopener">YouTube</a>
+    <a href="https://whatsapp.com/channel/0029Vaq4PRsD38CJKXzwmb42" target="_blank" rel="noopener">WhatsApp</a>
+  </div>
+  <span>&copy; 2026 IMMU XD</span>
+</footer>
+
+<!-- ============ ambient scene ============ -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+window.SCENE = { setState(){}, pulse(){} };
+(function(){
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const canvas = document.getElementById('scene');
+  if(!window.THREE) return;
+
+  const renderer = new THREE.WebGLRenderer({canvas, alpha:true, antialias:true});
+  renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+  const scene = new THREE.Scene();
+  scene.fog = new THREE.FogExp2(0x060a09, .055);
+  const camera = new THREE.PerspectiveCamera(58, innerWidth/innerHeight, .1, 100);
+  camera.position.set(0, 0, 9.5);
+
+  const GREEN = new THREE.Color(0x5fd99b);
+  const AMBER = new THREE.Color(0xe8b563);
+
+  const COUNT = innerWidth < 720 ? 1500 : 2800;
+  const pGeo = new THREE.BufferGeometry();
+  const pos = new Float32Array(COUNT*3);
+  const seed = new Float32Array(COUNT);
+  const radius = new Float32Array(COUNT);
+  for(let i=0;i<COUNT;i++){
+    const r = 2.6 + Math.pow(Math.random(),1.7)*3.6;
+    const th = Math.random()*Math.PI*2, ph = Math.acos(2*Math.random()-1);
+    pos[i*3]   = r*Math.sin(ph)*Math.cos(th);
+    pos[i*3+1] = r*Math.sin(ph)*Math.sin(th);
+    pos[i*3+2] = r*Math.cos(ph);
+    seed[i] = Math.random()*Math.PI*2;
+    radius[i] = r;
+  }
+  pGeo.setAttribute('position', new THREE.BufferAttribute(pos,3));
+  const pMat = new THREE.PointsMaterial({
+    color:0x5fd99b, size:.03, transparent:true, opacity:.5,
+    blending:THREE.AdditiveBlending, depthWrite:false});
+  const points = new THREE.Points(pGeo, pMat);
+  scene.add(points);
+
+  const core = new THREE.Mesh(new THREE.IcosahedronGeometry(1.7,1),
+    new THREE.MeshBasicMaterial({color:0x3fae7a, wireframe:true, transparent:true, opacity:.07}));
+  scene.add(core);
+  const core2 = new THREE.Mesh(new THREE.IcosahedronGeometry(2.4,0),
+    new THREE.MeshBasicMaterial({color:0x5fd99b, wireframe:true, transparent:true, opacity:.035}));
+  scene.add(core2);
+
+  const ringMat = new THREE.MeshBasicMaterial({
+    color:0x5fd99b, transparent:true, opacity:.055, side:THREE.DoubleSide});
+  const ring = new THREE.Mesh(new THREE.TorusGeometry(3.5,.006,8,180), ringMat);
+  ring.rotation.x = Math.PI/2.4;
+  scene.add(ring);
+  const ring2 = new THREE.Mesh(new THREE.TorusGeometry(4.4,.004,8,180), ringMat.clone());
+  ring2.rotation.x = Math.PI/1.7; ring2.rotation.z = .5;
+  scene.add(ring2);
+
+  const dGeo = new THREE.BufferGeometry(), dC = 500, dP = new Float32Array(dC*3);
+  for(let i=0;i<dC*3;i++) dP[i] = (Math.random()-.5)*44;
+  dGeo.setAttribute('position', new THREE.BufferAttribute(dP,3));
+  scene.add(new THREE.Points(dGeo, new THREE.PointsMaterial({
+    color:0x6f827a, size:.018, transparent:true, opacity:.28, depthWrite:false})));
+
+  let mx=0,my=0,tx=0,ty=0,sy=0;
+  addEventListener('pointermove', e=>{tx=(e.clientX/innerWidth-.5); ty=(e.clientY/innerHeight-.5)});
+  addEventListener('scroll', ()=>{sy=scrollY}, {passive:true});
+  function resize(){
+    renderer.setSize(innerWidth, innerHeight);
+    camera.aspect = innerWidth/innerHeight;
+    camera.updateProjectionMatrix();
+  }
+  addEventListener('resize', resize); resize();
+
+  let state = 'idle';
+  let energy = 0, energyTo = 0;
+  let warm = 0, warmTo = 0;
+  let burst = 0;
+
+  window.SCENE = {
+    setState(s){
+      state = s;
+      energyTo = s === 'busy' ? 1 : s === 'live' ? .35 : 0;
+      warmTo   = s === 'live' ? .55 : s === 'dead' ? .9 : 0;
+    },
+    pulse(){ burst = 1; }
+  };
+
+  const base = pos.slice();
+  const clock = new THREE.Clock();
+  const tmpColor = new THREE.Color();
+
+  (function tick(){
+    const t = clock.getElapsedTime();
+    mx += (tx-mx)*.035; my += (ty-my)*.035;
+    energy += (energyTo-energy)*.045;
+    warm   += (warmTo-warm)*.03;
+    burst  *= .955;
+
+    if(!reduced){
+      const a = pGeo.attributes.position.array;
+      const wob = .05 + energy*.09;
+      const push = burst*1.5;
+      for(let i=0;i<COUNT;i++){
+        const s = seed[i];
+        const wave = push>0.002
+          ? Math.max(0, Math.sin((t*7 - radius[i]*1.6)) ) * push * (1 - (radius[i]-2.6)/3.6)
+          : 0;
+        const k = 1 + wave*.16;
+        a[i*3]   = base[i*3]  *k + Math.sin(t*(.45+energy*.5)+s)*wob;
+        a[i*3+1] = base[i*3+1]*k + Math.cos(t*(.38+energy*.5)+s)*wob;
+        a[i*3+2] = base[i*3+2]*k + Math.sin(t*(.30+energy*.4)+s*1.3)*wob;
+      }
+      pGeo.attributes.position.needsUpdate = true;
+    }
+
+    tmpColor.copy(GREEN).lerp(AMBER, warm);
+    pMat.color.copy(tmpColor);
+    pMat.opacity = .5 + energy*.22 + burst*.25;
+    ringMat.color.copy(tmpColor);
+    ringMat.opacity = .055 + energy*.10 + burst*.12;
+
+    points.rotation.y = t*(.035 + energy*.16) + mx*.4;
+    points.rotation.x = my*.22 + sy*.0003;
+    core.rotation.y = -t*(.09+energy*.2); core.rotation.x = t*.06;
+    core2.rotation.y = t*(.045+energy*.12);
+    ring.rotation.z  = t*(.12 + energy*.9);
+    ring2.rotation.y = -t*(.09 + energy*.7);
+
+    camera.position.z = 9.5 - Math.min(sy*.0012, 2.2) - energy*.5 - burst*.5;
+    camera.position.x = mx*.7;
+    camera.position.y = -my*.6 - sy*.0008;
+    camera.lookAt(0,0,0);
+
+    renderer.render(scene, camera);
+    requestAnimationFrame(tick);
+  })();
+})();
+</script>
+
+<!-- ============ reveal plans ============ -->
+<script>
+const revealBtn = document.getElementById('revealBtn');
+const revealText = revealBtn.querySelector('.rb-text');
+const plansWrap = document.getElementById('plansWrap');
+
+revealBtn.addEventListener('click', ()=>{
+  const isOpen = plansWrap.classList.toggle('open');
+  revealBtn.classList.toggle('open', isOpen);
+  revealText.textContent = isOpen ? 'Hide plans' : 'See available plans';
+  if(isOpen){
+    plansWrap.scrollIntoView({behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block:'nearest'});
+  }
+});
+</script>
+
+<!-- ============ plan -> whatsapp ============ -->
+<script>
+const WHATSAPP_NUMBER = '923493114170';
+
+document.querySelectorAll('.plan').forEach(el=>{
+  el.addEventListener('click', ()=>{
+    const days = el.getAttribute('data-days');
+    const price = el.getAttribute('data-price');
+    const msg = `Hello, I want to buy IMMU XD - BUG.\nPlan: ${days}\nPrice: Rs ${price}\nPlease confirm and activate.`;
+    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
+    window.SCENE.pulse();
+    window.open(url, '_blank', 'noopener');
+  });
+});
+</script>
+</body>
+                                                     </html>
